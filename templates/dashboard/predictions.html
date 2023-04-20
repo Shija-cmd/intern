@@ -1,0 +1,37 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Undergraduate GPA</th>
+                    <th scope="col">Research Concept Note</th>
+                    <th scope="col">TOEFL</th>
+                    <th scope="col">Letter of Recommendation</th>
+                    <th scope="col">Statement of Purpose</th>
+                    <th scope="col">Selection Probability</th>
+                    <th scope="col">Status</th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for data in shortlisted_applicants %}
+                  <tr>
+                    <th scope="row">{{ data.NAME}}</th>
+                    <td>{{ data.UGPA }}</td>
+                    <td>{{ data.RCN }}</td>
+                    <td>{{ data.TOEFL }}</td>
+                    <td>{{ data.LOR }}</td>
+                    <td>{{ data.SOP }}</td>
+                    <td>{{ data.PROBABILITY }}</td>
+                    <td>{{ data.STATUS }}</td> 
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>  
+    </div>
+</div>
+{% endblock %}
